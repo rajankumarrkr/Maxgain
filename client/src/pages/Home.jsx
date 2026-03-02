@@ -29,7 +29,7 @@ const Home = () => {
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
-                    <h2 className="text-sm text-slate-400">Welcome,</h2>
+                    <h2 className="text-sm text-slate-500">Welcome,</h2>
                     <h1 className="text-xl font-bold">{profile?.name}</h1>
                 </div>
                 <div className="bg-accent/20 p-2 rounded-full">
@@ -38,25 +38,25 @@ const Home = () => {
             </div>
 
             {/* Wallet Card */}
-            <div className="premium-gradient p-6 rounded-3xl shadow-2xl relative overflow-hidden flex flex-col gap-4 border border-white/10">
+            <div className="premium-gradient p-6 rounded-3xl shadow-2xl relative overflow-hidden flex flex-col gap-4 border border-black/10">
                 <div className="absolute top-0 right-0 p-4 opacity-10">
                     <Wallet size={100} />
                 </div>
                 <div className="z-10">
-                    <p className="text-slate-300 text-sm font-medium">Total Wallet Balance</p>
+                    <p className="text-slate-600 text-sm font-medium">Total Wallet Balance</p>
                     <h2 className="text-4xl font-bold mt-1 gold-text">₹{profile?.walletBalance.toLocaleString()}</h2>
                 </div>
                 <div className="flex gap-4 z-10 mt-2">
                     <button
                         onClick={() => navigate('/recharge')}
-                        className="flex-1 bg-white/10 hover:bg-white/20 py-3 rounded-2xl flex items-center justify-center gap-2 backdrop-blur-md border border-white/5 transition-all"
+                        className="flex-1 bg-black/10 hover:bg-black/20 py-3 rounded-2xl flex items-center justify-center gap-2 backdrop-blur-md border border-black/5 transition-all"
                     >
                         <ArrowUpCircle size={20} className="text-green-400" />
                         <span className="font-semibold">Recharge</span>
                     </button>
                     <button
                         onClick={() => navigate('/withdraw')}
-                        className="flex-1 bg-white/10 hover:bg-white/20 py-3 rounded-2xl flex items-center justify-center gap-2 backdrop-blur-md border border-white/5 transition-all"
+                        className="flex-1 bg-black/10 hover:bg-black/20 py-3 rounded-2xl flex items-center justify-center gap-2 backdrop-blur-md border border-black/5 transition-all"
                     >
                         <ArrowDownCircle size={20} className="text-red-400" />
                         <span className="font-semibold">Withdraw</span>
@@ -72,7 +72,7 @@ const Home = () => {
                     </div>
                     <div>
                         <h3 className="font-bold">Alpha Trading Bots</h3>
-                        <p className="text-xs text-slate-400">Generating 10% daily returns consistently.</p>
+                        <p className="text-xs text-slate-500">Generating 10% daily returns consistently.</p>
                     </div>
                 </div>
             </div>
@@ -80,17 +80,17 @@ const Home = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="glass-card flex flex-col gap-1">
-                    <p className="text-xs text-slate-400">Total Income</p>
+                    <p className="text-xs text-slate-500">Total Income</p>
                     <p className="font-bold text-lg">₹{profile?.totalIncome.toLocaleString()}</p>
                 </div>
                 <div className="glass-card flex flex-col gap-1">
-                    <p className="text-xs text-slate-400">Referral Code</p>
+                    <p className="text-xs text-slate-500">Referral Code</p>
                     <p className="font-bold text-accent">{profile?.referralCode}</p>
                 </div>
             </div>
 
             {/* Trading Banner Illustration Space */}
-            <div className="h-48 rounded-3xl overflow-hidden glass-card flex items-center justify-center border-dashed border-2 border-white/10">
+            <div className="h-48 rounded-3xl overflow-hidden glass-card flex items-center justify-center border-dashed border-2 border-black/10">
                 <div className="text-center p-6">
                     <p className="text-slate-500 italic">"Our expert traders utilize high-frequency algorithms to ensure your stable returns."</p>
                 </div>

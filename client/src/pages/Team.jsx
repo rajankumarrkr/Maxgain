@@ -39,7 +39,7 @@ const Team = () => {
         <div className="flex flex-col gap-6 pb-10">
             <div className="text-center py-4">
                 <h1 className="text-2xl font-bold gold-text">My Team</h1>
-                <p className="text-slate-400 text-sm">Build your network, earn together</p>
+                <p className="text-slate-500 text-sm">Build your network, earn together</p>
             </div>
 
             {/* Referral Link Card */}
@@ -48,10 +48,10 @@ const Team = () => {
                     <UserPlus className="text-accent" />
                     <h3 className="font-bold">Referral Program</h3>
                 </div>
-                <p className="text-sm text-slate-400">Share your link and earn 10% commission on every investment your team members make.</p>
-                <div className="bg-white/5 p-3 rounded-xl border border-white/5 flex items-center justify-between">
+                <p className="text-sm text-slate-500">Share your link and earn 10% commission on every investment your team members make.</p>
+                <div className="bg-black/5 p-3 rounded-xl border border-black/5 flex items-center justify-between">
                     <span className="text-xs font-mono truncate mr-2">{window.location.origin}/register?ref={profile?.referralCode}</span>
-                    <button onClick={copyToClipboard} className="text-accent hover:text-white transition-colors">
+                    <button onClick={copyToClipboard} className="text-accent hover:text-slate-800 transition-colors">
                         {copied ? <Check size={18} /> : <Copy size={18} />}
                     </button>
                 </div>
@@ -61,12 +61,12 @@ const Team = () => {
             <div className="grid grid-cols-2 gap-4">
                 <div className="glass-card flex flex-col items-center gap-2">
                     <Users className="text-accent" size={32} />
-                    <span className="text-slate-400 text-xs">Total Members</span>
+                    <span className="text-slate-500 text-xs">Total Members</span>
                     <span className="text-2xl font-bold">{teamData?.teamSize || 0}</span>
                 </div>
                 <div className="glass-card flex flex-col items-center gap-2">
                     <Award className="text-gold" size={32} />
-                    <span className="text-slate-400 text-xs">Total Earnings</span>
+                    <span className="text-slate-500 text-xs">Total Earnings</span>
                     <span className="text-2xl font-bold">₹{profile?.referralIncome || 0}</span>
                 </div>
             </div>

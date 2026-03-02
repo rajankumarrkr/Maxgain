@@ -33,7 +33,7 @@ const Recharge = () => {
                     <CheckCircle2 size={64} className="text-green-400" />
                 </div>
                 <h2 className="text-2xl font-bold">Request Submitted!</h2>
-                <p className="text-slate-400">Admin will verify and credit your wallet within 30-60 minutes.</p>
+                <p className="text-slate-500">Admin will verify and credit your wallet within 30-60 minutes.</p>
             </div>
         );
     }
@@ -44,20 +44,20 @@ const Recharge = () => {
 
             <div className="glass-card flex flex-col gap-6">
                 <div className="text-center p-4 bg-accent/5 rounded-2xl border border-accent/20">
-                    <p className="text-xs text-slate-400 uppercase font-bold tracking-widest">Pay to UPI / Scan QR</p>
+                    <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Pay to UPI / Scan QR</p>
                     <h2 className="text-xl font-mono font-bold text-accent mt-2">maxgain.pay@upi</h2>
                     <p className="text-[10px] text-slate-500 mt-1 italic">Scan QR code from your app or pay to UPI ID</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm font-medium text-slate-400 px-1">Recharge Amount (Min ₹300)</label>
-                        <div className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/5 focus-within:border-accent/40 transition-all">
+                        <label className="text-sm font-medium text-slate-500 px-1">Recharge Amount (Min ₹300)</label>
+                        <div className="flex items-center gap-3 bg-black/5 p-4 rounded-xl border border-black/5 focus-within:border-accent/40 transition-all">
                             <IndianRupee className="text-accent" size={20} />
                             <input
                                 type="number"
                                 placeholder="Enter Amount"
-                                className="bg-transparent border-none outline-none w-full text-white text-lg font-bold"
+                                className="bg-transparent border-none outline-none w-full text-slate-800 text-lg font-bold"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
                                 required
@@ -66,13 +66,13 @@ const Recharge = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm font-medium text-slate-400 px-1">UTR / Transaction ID</label>
-                        <div className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/5 focus-within:border-accent/40 transition-all">
+                        <label className="text-sm font-medium text-slate-500 px-1">UTR / Transaction ID</label>
+                        <div className="flex items-center gap-3 bg-black/5 p-4 rounded-xl border border-black/5 focus-within:border-accent/40 transition-all">
                             <CreditCard className="text-accent" size={20} />
                             <input
                                 type="text"
                                 placeholder="12 Digit UTR Number"
-                                className="bg-transparent border-none outline-none w-full text-white font-mono"
+                                className="bg-transparent border-none outline-none w-full text-slate-800 font-mono"
                                 value={utr}
                                 onChange={(e) => setUtr(e.target.value)}
                                 required
@@ -94,7 +94,7 @@ const Recharge = () => {
 
             <div className="bg-yellow-500/10 border border-yellow-500/20 p-4 rounded-2xl">
                 <h4 className="text-yellow-500 font-bold text-sm mb-1">Important Note:</h4>
-                <ul className="text-xs text-slate-400 list-disc ml-4 flex flex-col gap-1">
+                <ul className="text-xs text-slate-500 list-disc ml-4 flex flex-col gap-1">
                     <li>Always double check the UTR number before submitting.</li>
                     <li>Recharge approval usually takes 30-60 minutes.</li>
                     <li>Do not submit fake UTRs, it may lead to account ban.</li>

@@ -40,7 +40,7 @@ const Records = ({ type }) => { // type: 'income' or 'withdrawal'
         if (type === 'recharge') return <PlusCircle className="text-accent" />;
         if (type === 'roi_credit') return <Zap className="text-gold" />;
         if (type === 'referral_commission') return <Zap className="text-green-400" />;
-        return <HelpCircle className="text-slate-400" />;
+        return <HelpCircle className="text-slate-500" />;
     };
 
     const getStatusStyles = (status) => {
@@ -49,7 +49,7 @@ const Records = ({ type }) => { // type: 'income' or 'withdrawal'
             case 'completed': return 'bg-green-500/10 text-green-400 border-green-500/20';
             case 'pending': return 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20';
             case 'rejected': return 'bg-red-500/10 text-red-400 border-red-500/20';
-            default: return 'bg-slate-500/10 text-slate-400 border-slate-500/20';
+            default: return 'bg-slate-500/10 text-slate-500 border-slate-500/20';
         }
     };
 
@@ -66,7 +66,7 @@ const Records = ({ type }) => { // type: 'income' or 'withdrawal'
                     transactions.map((t, idx) => (
                         <div key={idx} className="glass-card flex items-center justify-between group">
                             <div className="flex items-center gap-4">
-                                <div className="bg-white/5 p-2.5 rounded-xl group-hover:scale-110 transition-transform">
+                                <div className="bg-black/5 p-2.5 rounded-xl group-hover:scale-110 transition-transform">
                                     {getIcon(t.type, t.status)}
                                 </div>
                                 <div>
@@ -78,7 +78,7 @@ const Records = ({ type }) => { // type: 'income' or 'withdrawal'
                                 </div>
                             </div>
                             <div className="text-right flex flex-col items-end gap-1.5">
-                                <p className={`font-black tracking-tight ${t.type === 'withdrawal' ? 'text-white' : 'text-accent'}`}>
+                                <p className={`font-black tracking-tight ${t.type === 'withdrawal' ? 'text-slate-800' : 'text-accent'}`}>
                                     {t.type === 'withdrawal' ? '-' : '+'}₹{t.amount}
                                 </p>
                                 <span className={`text-[10px] px-2 py-0.5 rounded-full border ${getStatusStyles(t.status)} font-bold`}>

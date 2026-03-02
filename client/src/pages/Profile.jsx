@@ -47,19 +47,19 @@ const Profile = () => {
             <div className="relative pt-10 px-4 pb-6 glass-card mt-10 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-20 premium-gradient opacity-50"></div>
                 <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-24 h-24 rounded-full bg-slate-800 border-4 border-slate-900 flex items-center justify-center -mt-12 shadow-2xl overflow-hidden">
+                    <div className="w-24 h-24 rounded-full bg-white border-4 border-slate-900 flex items-center justify-center -mt-12 shadow-2xl overflow-hidden">
                         <User size={60} className="text-slate-600" />
                     </div>
                     <div className="text-center mt-4">
                         <h2 className="text-xl font-bold">{profile?.name}</h2>
-                        <p className="text-slate-400 text-sm">{profile?.mobile}</p>
+                        <p className="text-slate-500 text-sm">{profile?.mobile}</p>
                         <p className="mt-2 text-xs bg-accent/20 text-accent px-3 py-1 rounded-full inline-block font-bold">
                             UID: MG-{profile?._id.substring(18).toUpperCase()}
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 mt-8 text-center pt-6 border-t border-white/5">
+                <div className="grid grid-cols-3 gap-2 mt-8 text-center pt-6 border-t border-black/5">
                     <div>
                         <p className="text-[10px] text-slate-500 uppercase tracking-wider">Balance</p>
                         <p className="font-bold text-accent">₹{profile?.walletBalance}</p>
@@ -81,10 +81,10 @@ const Profile = () => {
                     <button
                         key={idx}
                         onClick={() => item.external ? window.open(item.path, '_blank') : null}
-                        className="glass-card flex items-center justify-between hover:bg-white/10 transition-all border border-white/5"
+                        className="glass-card flex items-center justify-between hover:bg-black/10 transition-all border border-black/5"
                     >
                         <div className="flex items-center gap-4">
-                            <div className="bg-white/5 p-2 rounded-xl">
+                            <div className="bg-black/5 p-2 rounded-xl">
                                 {item.icon}
                             </div>
                             <span className="font-medium">{item.name}</span>

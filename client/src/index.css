@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0f172a;
-  --color-secondary: #1e293b;
+  --color-primary: #f8fafc;
+  --color-secondary: #ffffff;
   --color-accent: #3b82f6;
   --color-gold: #fbbf24;
-  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass: rgba(0, 0, 0, 0.05);
 
-  --background-image-premium-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --background-image-premium-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  @apply bg-primary text-slate-100 font-sans min-h-screen;
+  @apply bg-primary text-slate-800 font-sans min-h-screen;
   background-attachment: fixed;
 }
 
 .glass-card {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-4 shadow-xl;
+  @apply bg-white/80 backdrop-blur-lg border border-slate-200 rounded-2xl p-4 shadow-xl;
 }
 
 .premium-btn {

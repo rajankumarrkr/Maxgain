@@ -56,31 +56,31 @@ const Login = () => {
                         transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
                         className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-tr from-accent to-blue-400 rounded-3xl shadow-2xl mb-6 transform rotate-12"
                     >
-                        <TrendingUp className="text-white" size={40} />
+                        <TrendingUp className="text-slate-800" size={40} />
                     </motion.div>
-                    <h1 className="text-4xl font-black tracking-tighter text-white mb-2 uppercase">
+                    <h1 className="text-4xl font-black tracking-tighter text-slate-800 mb-2 uppercase">
                         Max<span className="text-accent">Gain</span>
                     </h1>
-                    <p className="text-slate-400 font-medium">Elevate your wealth with fixed returns</p>
+                    <p className="text-slate-500 font-medium">Elevate your wealth with fixed returns</p>
                 </div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="glass-card p-8 border border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden"
+                    className="glass-card p-8 border border-black/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden"
                 >
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                         <div className="flex flex-col gap-2">
                             <label className="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Mobile Access</label>
-                            <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 focus-within:border-accent group transition-all">
+                            <div className="flex items-center gap-4 bg-black/5 p-4 rounded-2xl border border-black/5 focus-within:border-accent group transition-all">
                                 <Smartphone className="text-slate-500 group-focus-within:text-accent transition-colors" size={22} />
                                 <input
                                     type="text"
                                     placeholder="Enter mobile number"
-                                    className="bg-transparent border-none outline-none w-full text-white placeholder:text-slate-600 font-medium"
+                                    className="bg-transparent border-none outline-none w-full text-slate-800 placeholder:text-slate-600 font-medium"
                                     value={mobile}
                                     onChange={(e) => setMobile(e.target.value)}
                                     required
@@ -90,12 +90,12 @@ const Login = () => {
 
                         <div className="flex flex-col gap-2">
                             <label className="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Secure Key</label>
-                            <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 focus-within:border-accent group transition-all">
+                            <div className="flex items-center gap-4 bg-black/5 p-4 rounded-2xl border border-black/5 focus-within:border-accent group transition-all">
                                 <Lock className="text-slate-500 group-focus-within:text-accent transition-colors" size={22} />
                                 <input
                                     type="password"
                                     placeholder="Enter password"
-                                    className="bg-transparent border-none outline-none w-full text-white placeholder:text-slate-600 font-medium"
+                                    className="bg-transparent border-none outline-none w-full text-slate-800 placeholder:text-slate-600 font-medium"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -126,7 +126,7 @@ const Login = () => {
                     transition={{ delay: 0.8 }}
                     className="text-center mt-8 text-slate-500 font-medium"
                 >
-                    New investor? <Link to="/register" className="text-accent underline hover:text-white transition-colors">Create Account</Link>
+                    New investor? <Link to="/register" className="text-accent underline hover:text-slate-800 transition-colors">Create Account</Link>
                 </motion.p>
             </motion.div>
         </div>

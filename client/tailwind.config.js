@@ -7,15 +7,15 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#0f172a", // Dark Blue
-                secondary: "#1e293b", // Slate
+                primary: "#f8fafc", // Slate 50 (Off-white)
+                secondary: "#ffffff", // Pure White
                 accent: "#3b82f6", // Blue
                 gold: "#fbbf24", // Gold for premium look
-                glass: "rgba(255, 255, 255, 0.05)",
+                glass: "rgba(0, 0, 0, 0.05)", // Darker tint for light mode glass
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'premium-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+                'premium-gradient': 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)', // Subtle light slate gradient
             }
         },
     },

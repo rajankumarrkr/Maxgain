@@ -64,22 +64,22 @@ const Admin = () => {
         <div className="flex flex-col gap-6 pb-20">
             <h1 className="text-2xl font-bold gold-text text-center">Admin Panel</h1>
 
-            <div className="flex bg-white/5 p-1 rounded-xl border border-white/5">
+            <div className="flex bg-black/5 p-1 rounded-xl border border-black/5">
                 <button
                     onClick={() => setTab('recharges')}
-                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${tab === 'recharges' ? 'bg-accent text-white shadow-lg shadow-accent/20' : 'text-slate-400'}`}
+                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${tab === 'recharges' ? 'bg-accent text-slate-800 shadow-lg shadow-accent/20' : 'text-slate-500'}`}
                 >
                     RECHARGES
                 </button>
                 <button
                     onClick={() => setTab('withdrawals')}
-                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${tab === 'withdrawals' ? 'bg-accent text-white shadow-lg shadow-accent/20' : 'text-slate-400'}`}
+                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${tab === 'withdrawals' ? 'bg-accent text-slate-800 shadow-lg shadow-accent/20' : 'text-slate-500'}`}
                 >
                     WITHDRAWALS
                 </button>
                 <button
                     onClick={() => setTab('users')}
-                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${tab === 'users' ? 'bg-accent text-white shadow-lg shadow-accent/20' : 'text-slate-400'}`}
+                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${tab === 'users' ? 'bg-accent text-slate-800 shadow-lg shadow-accent/20' : 'text-slate-500'}`}
                 >
                     USERS
                 </button>
@@ -92,10 +92,10 @@ const Admin = () => {
                     <div className="text-center py-20 text-slate-600 italic text-sm">No pending items found.</div>
                 ) : (
                     data.map((item, idx) => (
-                        <div key={idx} className="glass-card flex flex-col gap-4 border border-white/10">
+                        <div key={idx} className="glass-card flex flex-col gap-4 border border-black/10">
                             <div className="flex justify-between items-start">
                                 <div>
-                                    <p className="font-bold text-white uppercase text-xs tracking-wider">{item.user?.name || item.name}</p>
+                                    <p className="font-bold text-slate-800 uppercase text-xs tracking-wider">{item.user?.name || item.name}</p>
                                     <p className="text-slate-500 text-[10px] font-mono">{item.user?.mobile || item.mobile}</p>
                                 </div>
                                 <div className="text-right">
@@ -105,8 +105,8 @@ const Admin = () => {
                             </div>
 
                             {tab === 'recharges' && (
-                                <div className="bg-white/5 p-2 rounded-lg border border-white/5 flex justify-between items-center">
-                                    <span className="text-[10px] text-slate-500">UTR: <span className="text-white font-mono">{item.utr}</span></span>
+                                <div className="bg-black/5 p-2 rounded-lg border border-black/5 flex justify-between items-center">
+                                    <span className="text-[10px] text-slate-500">UTR: <span className="text-slate-800 font-mono">{item.utr}</span></span>
                                     <div className="flex gap-2">
                                         <button onClick={() => handleAction(item._id, 'approved')} className="p-2 bg-green-500/20 text-green-400 rounded-lg hover:bg-green-500/30 transition-all"><Check size={16} /></button>
                                         <button onClick={() => handleAction(item._id, 'rejected')} className="p-2 bg-red-500/20 text-red-400 rounded-lg hover:bg-red-500/30 transition-all"><X size={16} /></button>
@@ -116,14 +116,14 @@ const Admin = () => {
 
                             {tab === 'withdrawals' && (
                                 <div className="flex flex-col gap-3">
-                                    <div className="bg-white/5 p-2 rounded-lg border border-white/5 text-[10px] grid grid-cols-2 gap-2">
+                                    <div className="bg-black/5 p-2 rounded-lg border border-black/5 text-[10px] grid grid-cols-2 gap-2">
                                         <div><span className="text-slate-500">Acc:</span> {item.bankDetails?.accountNo}</div>
                                         <div><span className="text-slate-500">IFSC:</span> {item.bankDetails?.ifsc}</div>
                                         <div className="col-span-2"><span className="text-slate-500">Holder:</span> {item.bankDetails?.name}</div>
                                     </div>
                                     <div className="flex gap-2">
-                                        <button onClick={() => handleAction(item._id, 'approved')} className="flex-1 py-2 bg-green-600 text-white rounded-lg font-bold text-xs">APPROVE</button>
-                                        <button onClick={() => handleAction(item._id, 'rejected')} className="flex-1 py-2 bg-red-600 text-white rounded-lg font-bold text-xs">REJECT</button>
+                                        <button onClick={() => handleAction(item._id, 'approved')} className="flex-1 py-2 bg-green-600 text-slate-800 rounded-lg font-bold text-xs">APPROVE</button>
+                                        <button onClick={() => handleAction(item._id, 'rejected')} className="flex-1 py-2 bg-red-600 text-slate-800 rounded-lg font-bold text-xs">REJECT</button>
                                     </div>
                                 </div>
                             )}
@@ -132,13 +132,13 @@ const Admin = () => {
                                 <div className="flex gap-2">
                                     <button
                                         onClick={() => toggleBlock(item._id, item.isBlocked)}
-                                        className={`flex-1 py-2 rounded-lg font-bold text-[10px] flex items-center justify-center gap-1 ${item.isBlocked ? 'bg-orange-500 text-white' : 'bg-slate-700 text-slate-300'}`}
+                                        className={`flex-1 py-2 rounded-lg font-bold text-[10px] flex items-center justify-center gap-1 ${item.isBlocked ? 'bg-orange-500 text-slate-800' : 'bg-slate-700 text-slate-600'}`}
                                     >
                                         <Ban size={12} /> {item.isBlocked ? 'UNBLOCK' : 'BLOCK'}
                                     </button>
                                     <button
                                         onClick={() => addManualBalance(item._id)}
-                                        className="flex-1 py-2 bg-accent text-white rounded-lg font-bold text-[10px] flex items-center justify-center gap-1"
+                                        className="flex-1 py-2 bg-accent text-slate-800 rounded-lg font-bold text-[10px] flex items-center justify-center gap-1"
                                     >
                                         <PlusCircle size={12} /> ADD CASH
                                     </button>

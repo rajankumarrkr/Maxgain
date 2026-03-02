@@ -62,32 +62,32 @@ const Register = () => {
                         transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
                         className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-tr from-accent to-blue-400 rounded-2xl shadow-2xl mb-4"
                     >
-                        <TrendingUp className="text-white" size={30} />
+                        <TrendingUp className="text-slate-800" size={30} />
                     </motion.div>
-                    <h1 className="text-3xl font-black tracking-tight text-white mb-2 uppercase">
+                    <h1 className="text-3xl font-black tracking-tight text-slate-800 mb-2 uppercase">
                         Join <span className="text-accent">MaxGain</span>
                     </h1>
-                    <p className="text-slate-400 font-medium">Start your passive income journey today</p>
+                    <p className="text-slate-500 font-medium">Start your passive income journey today</p>
                 </div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
-                    className="glass-card p-6 md:p-8 border border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden"
+                    className="glass-card p-6 md:p-8 border border-black/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden"
                 >
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-1">Full Identity</label>
-                            <div className="flex items-center gap-4 bg-white/5 p-3.5 rounded-2xl border border-white/5 focus-within:border-accent group transition-all">
+                            <div className="flex items-center gap-4 bg-black/5 p-3.5 rounded-2xl border border-black/5 focus-within:border-accent group transition-all">
                                 <User className="text-slate-500 group-focus-within:text-accent transition-colors" size={20} />
                                 <input
                                     type="text"
                                     name="name"
                                     placeholder="Your Full Name"
-                                    className="bg-transparent border-none outline-none w-full text-white placeholder:text-slate-600 font-medium text-sm"
+                                    className="bg-transparent border-none outline-none w-full text-slate-800 placeholder:text-slate-600 font-medium text-sm"
                                     onChange={handleChange}
                                     required
                                 />
@@ -96,13 +96,13 @@ const Register = () => {
 
                         <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-1">Mobile Connection</label>
-                            <div className="flex items-center gap-4 bg-white/5 p-3.5 rounded-2xl border border-white/5 focus-within:border-accent group transition-all">
+                            <div className="flex items-center gap-4 bg-black/5 p-3.5 rounded-2xl border border-black/5 focus-within:border-accent group transition-all">
                                 <Smartphone className="text-slate-500 group-focus-within:text-accent transition-colors" size={20} />
                                 <input
                                     type="text"
                                     name="mobile"
                                     placeholder="Mobile Number"
-                                    className="bg-transparent border-none outline-none w-full text-white placeholder:text-slate-600 font-medium text-sm"
+                                    className="bg-transparent border-none outline-none w-full text-slate-800 placeholder:text-slate-600 font-medium text-sm"
                                     onChange={handleChange}
                                     required
                                 />
@@ -111,13 +111,13 @@ const Register = () => {
 
                         <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-1">Security Pass</label>
-                            <div className="flex items-center gap-4 bg-white/5 p-3.5 rounded-2xl border border-white/5 focus-within:border-accent group transition-all">
+                            <div className="flex items-center gap-4 bg-black/5 p-3.5 rounded-2xl border border-black/5 focus-within:border-accent group transition-all">
                                 <Lock className="text-slate-500 group-focus-within:text-accent transition-colors" size={20} />
                                 <input
                                     type="password"
                                     name="password"
                                     placeholder="Create Password"
-                                    className="bg-transparent border-none outline-none w-full text-white placeholder:text-slate-600 font-medium text-sm"
+                                    className="bg-transparent border-none outline-none w-full text-slate-800 placeholder:text-slate-600 font-medium text-sm"
                                     onChange={handleChange}
                                     required
                                 />
@@ -126,13 +126,13 @@ const Register = () => {
 
                         <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-1">Referral Link (Optional)</label>
-                            <div className="flex items-center gap-4 bg-white/5 p-3.5 rounded-2xl border border-white/5 focus-within:border-accent group transition-all">
+                            <div className="flex items-center gap-4 bg-black/5 p-3.5 rounded-2xl border border-black/5 focus-within:border-accent group transition-all">
                                 <Share2 className="text-slate-500 group-focus-within:text-accent transition-colors" size={20} />
                                 <input
                                     type="text"
                                     name="referralCode"
                                     placeholder="Referral Code"
-                                    className="bg-transparent border-none outline-none w-full text-white placeholder:text-slate-600 font-medium text-sm"
+                                    className="bg-transparent border-none outline-none w-full text-slate-800 placeholder:text-slate-600 font-medium text-sm"
                                     onChange={handleChange}
                                 />
                             </div>
@@ -161,7 +161,7 @@ const Register = () => {
                     transition={{ delay: 0.8 }}
                     className="text-center mt-8 text-slate-500 font-medium"
                 >
-                    Already invested? <Link to="/login" className="text-accent underline hover:text-white transition-colors">Login Here</Link>
+                    Already invested? <Link to="/login" className="text-accent underline hover:text-slate-800 transition-colors">Login Here</Link>
                 </motion.p>
             </motion.div>
         </div>

@@ -11,14 +11,14 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-secondary/80 backdrop-blur-md border-t border-white/10 px-6 py-3 pb-6 z-50">
+        <nav className="fixed bottom-0 left-0 right-0 bg-secondary/80 backdrop-blur-md border-t border-black/10 px-6 py-3 pb-6 z-50">
             <div className="flex justify-between items-center max-w-4xl mx-auto">
                 {navItems.map((item) => (
                     <NavLink
                         key={item.name}
                         to={item.path}
                         className={({ isActive }) =>
-                            `flex flex-col items-center gap-1 transition-all ${isActive ? 'text-accent scale-110' : 'text-slate-400'
+                            `flex flex-col items-center gap-1 transition-all ${isActive ? 'text-accent scale-110' : 'text-slate-500'
                             }`
                         }
                     >
