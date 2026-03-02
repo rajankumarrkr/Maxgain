@@ -14,4 +14,8 @@ const transactionSchema = new mongoose.Schema({
     adminRemark: { type: String }
 }, { timestamps: true });
 
+// Add database indexes for performance optimization
+transactionSchema.index({ user: 1, type: 1 });
+transactionSchema.index({ status: 1 });
+
 module.exports = mongoose.model('Transaction', transactionSchema);

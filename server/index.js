@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const compression = require('compression');
 const connectDB = require('./config/db');
 const dailyROICron = require('./cron/roiCron');
 
@@ -13,6 +14,7 @@ connectDB();
 const app = express();
 
 // Middleware
+app.use(compression()); // Gzip compression for faster responses
 app.use(cors());
 app.use(express.json());
 

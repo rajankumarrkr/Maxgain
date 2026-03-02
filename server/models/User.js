@@ -21,6 +21,9 @@ const userSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
+// Add database index for faster team/referral lookups
+userSchema.index({ referredBy: 1 });
+
 userSchema.pre('save', async function () {
     if (!this.isModified('password')) return;
     this.password = await bcrypt.hash(this.password, 10);
