@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../api/axios';
-import { Users, CreditCard, Shield, Check, X, Ban, PlusCircle } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import { Users, CreditCard, Shield, Check, X, Ban, PlusCircle, LogOut } from 'lucide-react';
 
 const Admin = () => {
+    const { user, loading: authLoading, logout } = useAuth();
+    const navigate = useNavigate();
     const [tab, setTab] = useState('recharges'); // recharges, withdrawals, users
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (!authLoading) {
+            if (!user) {
+                navigate('/admin-login');
+            } else if (!user.isAdmin) {
+                logout();
+                navigate('/admin-login');
+            }
+        }
+    }, [user, authLoading, navigate, logout]);
 
     const fetchData = async () => {
         setLoading(true);
@@ -61,10 +76,24 @@ const Admin = () => {
     };
 
     return (
-        <div className="flex flex-col gap-6 pb-20">
-            <h1 className="text-2xl font-bold gold-text text-center">Admin Panel</h1>
+        <div className="flex flex-col gap-6 p-6 min-h-screen bg-slate-50">
+            <div className="flex justify-between items-center bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                <h1 className="text-2xl font-black text-slate-800 uppercase tracking-tight">Admin<span className="text-red-500">Portal</span></h1>
+                <div className="flex items-center gap-4">
+                    <span className="text-sm font-bold text-slate-600 hidden md:inline-block">Logged in as Admin</span>
+                    <button
+                        onClick={() => {
+                            logout();
+                            navigate('/admin-login');
+                        }}
+                        className="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg font-bold text-sm transition-colors"
+                    >
+                        <LogOut size={16} /> Logout
+                    </button>
+                </div>
+            </div>
 
-            <div className="flex bg-black/5 p-1 rounded-xl border border-black/5">
+            <div className="flex bg-white p-1 rounded-xl border border-slate-200 shadow-sm">
                 <button
                     onClick={() => setTab('recharges')}
                     className={`flex-1 py-2 text-xs font-bold rounded-lg transition-all ${tab === 'recharges' ? 'bg-accent text-slate-800 shadow-lg shadow-accent/20' : 'text-slate-500'}`}

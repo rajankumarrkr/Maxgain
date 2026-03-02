@@ -12,6 +12,7 @@ import Withdraw from './pages/Withdraw';
 import BankDetails from './pages/BankDetails';
 import Records from './pages/Records';
 import Admin from './pages/Admin';
+import AdminLogin from './pages/AdminLogin';
 import Layout from './components/Layout';
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="plans" element={<Plans />} />
